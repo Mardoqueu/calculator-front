@@ -24,7 +24,7 @@ This repository contains the front-end part of the calculator application.
 2. **Navigate into the project directory:**
 
    ```sh
-   cd calc-front
+   cd calculator-front
    ```
 
 3. **Install dependencies:**
