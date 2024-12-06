@@ -1,11 +1,28 @@
 html, body, #root {
-  height: 100dvh; 
-  width: 100dvw;
+  height: 100%; 
+  width: 100%;
   margin: 0;
   padding: 0;
   display: flex;
   flex-direction: column;
-  justify-content: center;
-  align-items: center;
+  justify-content: flex-start;
+  align-items: flex-start;
   background-color: #fff;
+  font-size: 16px;
+  box-sizing: border-box;
+}
+
+@media (min-width: 768px) {
+  html, body, #root {
+    justify-content: center;
+    align-items: center;
+  }
+}
+
+@media (min-width: 1024px) {
+  html, body, #root {
+    justify-content: center;
+    align-items: center;
+    font-size: 18px;
+  }
 }
