@@ -18,7 +18,7 @@ This repository contains the front-end part of the calculator application.
 1. **Clone the repository:**
 
    ```sh
-   git clone https://github.com/Mardoqueu/calc-front.git
+   git clone https://github.com/Mardoqueu/calculator-front
    ```
    
 2. **Navigate into the project directory:**
@@ -37,11 +37,17 @@ This repository contains the front-end part of the calculator application.
    npm i
    ```
 
-4. **Run the application:**
+4. **Run the tests:**
+
+   ```sh
+   npm run test
+   ```
+
+5. **Run the application:**
 
    ```sh
    npm run dev
    ```
 
-5. **Access the application:** Open your web browser and navigate to the URL provided by the terminal.
+6. **Access the application:** Open your web browser and navigate to the URL provided by the terminal.
 
