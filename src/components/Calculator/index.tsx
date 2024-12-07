@@ -49,10 +49,10 @@ export const Calculator = ({ onInputChange }: CalculatorProps) => {
         bgcolor: "#f0f0f0",
         border: "2px solid #cccccc",
         borderRadius: 2,
-        paddingTop: 10, 
-        paddingBottom: 20, 
-        paddingLeft: 20, 
-        paddingRight: 20,
+        paddingTop: "10px", 
+        paddingBottom: "20px", 
+        paddingLeft: "20px", 
+        paddingRight: "20px",
         boxShadow: "0 4px 8px rgba(0, 0, 0, 0.1)",
       }}
     >
