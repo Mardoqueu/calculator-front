@@ -43,7 +43,7 @@ export function HomePage() {
 
   return (
     <>
-      <Container style={{ marginTop: 12 }}>
+      <Container style={{ marginTop: 10 }}>
         <Box
           style={{
             display: "flex",
@@ -104,7 +104,7 @@ export function HomePage() {
             flexDirection: "column",
             alignItems: "center",
             gap: 20,
-            marginTop: 20,
+            marginTop: 14,
           }}
         >
           <Box
@@ -140,7 +140,6 @@ export function HomePage() {
           maxWidth: 400,
           fontSize: 18,
           mt: 2,
-          mb: 2,
         }}
         inputProps={{ style: { textAlign: "center" } }}
         value={randomString}

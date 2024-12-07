@@ -65,7 +65,7 @@ export const Calculator = ({ onInputChange }: CalculatorProps) => {
           border: "1px solid #cccccc",
           borderRadius: 2,
           padding: 1,
-          height: 60,
+          height: 54,
           color: "#333",
           pointerEvents: "none",
           userSelect: "none",
@@ -73,7 +73,7 @@ export const Calculator = ({ onInputChange }: CalculatorProps) => {
           fontSize: 24,
           textAlign: "right",
           mb: 2,
-          maxWidth: 280
+          maxWidth: 280,
         }}
         value={input}
         inputProps={{
