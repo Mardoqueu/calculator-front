@@ -44,6 +44,8 @@ export const Calculator = ({ onInputChange }: CalculatorProps) => {
       sx={{
         minWidth: 280,
         minHeight: 200,
+        maxHeight: 400,
+        maxWidth: 300,
         bgcolor: "#f0f0f0",
         border: "2px solid #cccccc",
         borderRadius: 2,
@@ -68,6 +70,7 @@ export const Calculator = ({ onInputChange }: CalculatorProps) => {
           fontSize: 24,
           textAlign: "right",
           mb: 2,
+          maxWidth: 160
         }}
         value={input}
         inputProps={{
@@ -84,7 +87,7 @@ export const Calculator = ({ onInputChange }: CalculatorProps) => {
             variant="contained"
             color="primary"
             onClick={() => handleClick(num)}
-            sx={{ width: "100%", height: 56, fontSize: 20 }}
+            sx={{ width: "100%", maxHeight: 60 }}
           >
             {num}
           </Button>
@@ -93,7 +96,7 @@ export const Calculator = ({ onInputChange }: CalculatorProps) => {
           variant="contained"
           color="primary"
           onClick={() => handleClick("0")}
-          sx={{ width: "100%", height: 56, fontSize: 20 }}
+          sx={{ width: "100%", maxheight: 60 }}
         >
           0
         </Button>
@@ -101,7 +104,7 @@ export const Calculator = ({ onInputChange }: CalculatorProps) => {
           variant="contained"
           color="secondary"
           onClick={handleClear}
-          sx={{ width: "100%", height: 56, fontSize: 20 }}
+          sx={{ width: "100%", maxheight: 60 }}
         >
           CE
         </Button>
@@ -109,7 +112,7 @@ export const Calculator = ({ onInputChange }: CalculatorProps) => {
           variant="contained"
           color="primary"
           onClick={handleEqual}
-          sx={{ width: "100%", height: 56, fontSize: 20 }}
+          sx={{ width: "100%", maxHeight: 60 }}
         >
           =
         </Button>
@@ -121,7 +124,7 @@ export const Calculator = ({ onInputChange }: CalculatorProps) => {
             variant="contained"
             color="secondary"
             onClick={() => handleClick(operator)}
-            sx={{ width: "100%", height: 56, fontSize: 20 }}
+            sx={{ width: "100%", maxheight: 60 }}
           >
             {operator}
           </Button>
