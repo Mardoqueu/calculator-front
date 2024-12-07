@@ -43,7 +43,7 @@ export function HomePage() {
 
   return (
     <>
-      <Container style={{ marginTop: 20 }}>
+      <Container style={{ marginTop: 10 }}>
         <Box
           style={{
             display: "flex",
