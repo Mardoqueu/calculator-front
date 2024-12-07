@@ -43,7 +43,7 @@ export const Calculator = ({ onInputChange }: CalculatorProps) => {
     <Box
       sx={{
         minWidth: 280,
-        maxWidth: 400,
+        minHeight: 200,
         bgcolor: "#f0f0f0",
         border: "2px solid #cccccc",
         borderRadius: 2,

@@ -43,7 +43,7 @@ export function HomePage() {
 
   return (
     <>
-      <Container style={{ flexDirection: "column" }}>
+      <Container>
         <Box
           style={{
             display: "flex",
@@ -119,7 +119,7 @@ export function HomePage() {
             <Button
               variant="contained"
               onClick={getRandomString}
-              style={{ maxWidth: 180 }}
+              style={{ maxWidth: 180, whiteSpace: "nowrap" }}
             >
               Generate string
             </Button>
@@ -133,7 +133,7 @@ export function HomePage() {
           borderRadius: 2,
           padding: 1,
           height: 46,
-          color: "#333",
+          color: "#333333",
           pointerEvents: "none",
           userSelect: "none",
           fontWeight: 600,
