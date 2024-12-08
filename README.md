@@ -51,3 +51,7 @@ This repository contains the front-end part of the calculator application.
 
 6. **Access the application:** Open your web browser and navigate to the URL provided by the terminal.
 
+
+![image](https://github.com/user-attachments/assets/3c592993-ef85-4efc-bb59-36a50510ea44)
+
+
