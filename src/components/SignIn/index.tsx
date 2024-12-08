@@ -17,6 +17,22 @@ import { toast } from "react-toastify";
 
 import { styled } from "@mui/material/styles";
 
+/**
+ * Styled component derived from MuiCard, customized to have a flexible and
+ * centered layout with specific styling for responsive design and theme adaptability.
+ *
+ * The Card component is styled to display its content in a column direction
+ * and automatically centers itself with a full width on smaller screens.
+ * As the screen size increases beyond the 'sm' breakpoint, a maximum width
+ * of 450px is applied for better layout management.
+ *
+ * The component utilizes theme-based spacing for padding and gaps between
+ * its children, ensuring a consistent look throughout the UI. It also incorporates
+ * a unique box shadow for visual depth and adjusts shadow intensity when in
+ * dark mode, leveraging theme-specific styles.
+ *
+ * Responsiveness and adaptability to theme changes are key features of this Card component.
+ */
 const Card = styled(MuiCard)(({ theme }) => ({
   display: "flex",
   flexDirection: "column",
@@ -36,6 +52,19 @@ const Card = styled(MuiCard)(({ theme }) => ({
   }),
 }));
 
+/**
+ * The `SignInContainer` is a styled component based on the `Stack` component, designed to be used as a container for a sign-in or login interface.
+ * It provides responsive styling, adapting its padding based on the screen size and adjusting its appearance depending on the theme applied.
+ *
+ * Key features:
+ * - Dynamically calculates height considering a CSS variable `--template-frame-height`.
+ * - Ensures the container has a full height and minimum height of 100%.
+ * - Provides padding that changes at the "sm" breakpoint and above.
+ * - Uses a pseudo-element `::before` to apply a radial background gradient, which can change based on the theme.
+ * - Ensures background visuals remain consistent by positioning the pseudo-element absolutely with a z-index that places it behind the main content.
+ *
+ * This allows for consistency in user interfaces by providing a modern and adaptable styling mechanism.
+ */
 const SignInContainer = styled(Stack)(({ theme }) => ({
   height: "calc((1 - var(--template-frame-height, 0)) * 100dvh)",
   minHeight: "100%",
@@ -59,6 +88,14 @@ const SignInContainer = styled(Stack)(({ theme }) => ({
   },
 }));
 
+/**
+ * SignIn component handles the user sign-in process by rendering a form that accepts username and password,
+ * validating these inputs, and attempting to authenticate the user upon form submission. If authentication
+ * is successful, the user is redirected to the home page, and relevant authentication tokens are stored.
+ *
+ * @return {JSX.Element} The JSX code for sign-in form with input fields for username and password,
+ * error messages, and a submit button that initiates the authentication process.
+ */
 export function SignIn() {
   const [userNameError, setUserNameError] = useState(false);
   const [emailErrorMessage, setEmailErrorMessage] = useState("");

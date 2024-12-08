@@ -14,6 +14,19 @@ import MuiCard from "@mui/material/Card";
 
 import { styled } from "@mui/material/styles";
 
+/**
+ * A styled card component based on MuiCard, customized with flexible layout and responsive design.
+ *
+ * The Card component is styled using a theme that provides spacing, margins, and box shadow properties.
+ * It supports a flexbox layout with a column-based orientation and aligns itself to the center.
+ * The width is set to 100% with padding and gap determined by the theme's spacing scale.
+ *
+ * Responsive design is enabled with a media query that adjusts the Card's width on screens
+ * that are medium size and larger as per the theme's breakpoints.
+ *
+ * In addition to the default styling, Card applies additional styling options when the theme's
+ * mode is set to 'dark', enhancing the visual depth with a more pronounced shadow.
+ */
 const Card = styled(MuiCard)(({ theme }) => ({
   display: "flex",
   flexDirection: "column",
@@ -33,6 +46,24 @@ const Card = styled(MuiCard)(({ theme }) => ({
   }),
 }));
 
+/**
+ * SignUpContainer is a styled component based on a Stack layout, designed to handle the presentation
+ * and structural aspects of a sign-up interface component. It applies responsive styling
+ * with specific theming and visual effects to ensure an adaptive user experience across different
+ * screen sizes.
+ *
+ * Characteristics:
+ * - Sets the height based on a calculated formula related to the `--template-frame-height` variable.
+ * - Ensures a minimum height of 100% for occupying full vertical space.
+ * - Incorporates padding that adjusts dynamically with screen size using `theme.spacing()`.
+ * - Adds an aesthetic background effect using a radial gradient to provide a subtle visual enhancement.
+ * - Utilizes CSS pseudo-element "::before" to render the background effect behind other content.
+ * - Supports additional styling for dark mode through `theme.applyStyles`.
+ *
+ * Adaptability:
+ * - Padding increases when the viewport meets the 'sm' breakpoint as defined by the theme's breakpoints.
+ * - Background gradient adapts based on the theme variant for better visibility in dark mode.
+ */
 const SignUpContainer = styled(Stack)(({ theme }) => ({
   height: "calc((1 - var(--template-frame-height, 0)) * 100dvh)",
   minHeight: "100%",
@@ -56,6 +87,12 @@ const SignUpContainer = styled(Stack)(({ theme }) => ({
   },
 }));
 
+/**
+ * Renders a sign-up form component that allows users to register with a username and password.
+ * This component provides validation for the username and password fields and handles form submission.
+ *
+ * @return {JSX.Element} The rendered sign-up form component.
+ */
 export function SignUp() {
   const [userNameError, setUserNameError] = useState(false);
   const [userNameErrorMessage, setUserNameErrorMessage] = useState("");

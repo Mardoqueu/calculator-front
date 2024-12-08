@@ -11,6 +11,12 @@ import { OperationsHistoryPage } from "./pages/OperationsHistoryPage";
 import { ToastContainer } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
 
+/**
+ * Renders the main application component wrapped with an authentication provider and router configuration.
+ * Sets up the routing structure for the application, including public and private routes.
+ *
+ * @return {JSX.Element} The root application component with authentication and routing logic applied.
+ */
 function App() {
   return (
     <AuthProvider>

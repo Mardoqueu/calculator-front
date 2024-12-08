@@ -4,6 +4,28 @@ import { calculateOperation } from "../../services/api";
 import { toast } from "react-toastify";
 import { CalculatorProps } from "../../interfaces/CalculatorProps";
 
+/**
+ * Calculator component that simulates a basic calculator interface.
+ *
+ * @param {CalculatorProps} props - The properties to configure the Calculator.
+ * @param {Function} props.onInputChange - Callback function invoked with the result of the operation.
+ *
+ * @returns {React.Element} A styled calculator UI component with digit and operator buttons, along with input display.
+ *
+ * State:
+ * - `input`: A string representing the current input displayed on the calculator, initially set to "0".
+ *
+ * Functions:
+ * - `handleClick`: Updates the `input` state based on user button clicks, concatenates digits and operators.
+ * - `handleEqual`: Calculates the result of the current `input` string, communicates with a server-side operation function.
+ * - `handleClear`: Resets the `input` state to "0", used to clear the current input.
+ *
+ * UI Details:
+ * - Includes a labeled display area showing the current `input`.
+ * - Number and operation buttons are provided for user interactions.
+ * - User input is formatted for read-only display, preventing manual edits.
+ * - Styled using Material-UI components, ensuring a visually appealing layout.
+ */
 export const Calculator = ({ onInputChange }: CalculatorProps) => {
   const [input, setInput] = useState<string>("0");
 

@@ -17,6 +17,15 @@ import DeleteIcon from "@mui/icons-material/Delete";
 import { HistoryOperationProps } from "../interfaces/HistoryOperationProps";
 import "../styles/styles.css";
 
+/**
+ * Renders a page displaying the operations history. Users can view a list of past operations
+ * along with their details and have the option to delete specific operations.
+ * Handles navigation back to the home page and manages its internal state to
+ * fetch and display operation history data, as well as handle deletion requests.
+ *
+ * @return {JSX.Element} A React component that displays a list of historical operations
+ * with options to navigate and manage the list.
+ */
 export function OperationsHistoryPage() {
   const navigate = useNavigate();
   const [operationsHistory, setOperationsHistory] = useState<

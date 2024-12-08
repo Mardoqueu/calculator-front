@@ -1,8 +1,29 @@
 import { UserProps } from "../interfaces/UserProps";
 import { toast } from "react-toastify";
 
+/**
+ * The base URL for the API endpoint.
+ *
+ * This constant serves as the entry point for all API requests within the application.
+ * It is a string representing the root URL of the backend server.
+ *
+ * Usage of this constant ensures that all network requests target the correct server
+ * and helps manage changes to the server address from a single point in the codebase.
+ *
+ * Be sure to update this URL if the server location changes.
+ *
+ * Note: This URL should always point to a valid API gateway.
+ */
 const API_URL = "https://gateway-api-d8a0222e1f5e.herokuapp.com";
 
+/**
+ * Sends a request to create a new user with the provided username and password.
+ *
+ * @param {Object} params - An object containing user details.
+ * @param {string} params.userName - The username for the new user.
+ * @param {string} params.password - The password for the new user.
+ * @return {Promise<void>} A promise that resolves if the user is created successfully, rejects with an error on failure.
+ */
 export async function createUser({ userName, password }: UserProps) {
   try {
     const user = {
@@ -34,6 +55,15 @@ export async function createUser({ userName, password }: UserProps) {
   }
 }
 
+/**
+ * Authenticates a user with the provided credentials.
+ *
+ * @param {Object} userProps - The user credentials.
+ * @param {string} userProps.userName - The username of the user.
+ * @param {string} userProps.password - The password of the user.
+ * @return {Promise<Object|undefined>} A promise that resolves to the user data if the login is successful,
+ * or undefined if an error occurs.
+ */
 export async function login({ userName, password }: UserProps) {
   try {
     const user = {
@@ -63,6 +93,13 @@ export async function login({ userName, password }: UserProps) {
   }
 }
 
+/**
+ * Sends a request to execute a mathematical operation on behalf of the user.
+ *
+ * @param {number} userId - The ID of the user performing the operation.
+ * @param {string} operation - The mathematical expression to evaluate.
+ * @return {Promise<Object|undefined>} The result of the operation if successful, otherwise undefined if an error occurs.
+ */
 export async function calculateOperation(userId: number, operation: string) {
   try {
     const operations = {
@@ -104,6 +141,15 @@ export async function calculateOperation(userId: number, operation: string) {
   }
 }
 
+/**
+ * Generates a random string by making a POST request to a specific API endpoint.
+ * Utilizes the user token stored in local storage to authorize the request.
+ * Displays a toast error message if the user token cannot be retrieved or if the request fails.
+ * Logs errors to the console and displays a toast error message in case of failure.
+ * Provides the random string upon successful completion of the request.
+ *
+ * @return {Promise<string|undefined>} A promise that resolves to the generated random string if successful, or undefined if an error occurs.
+ */
 export async function generateRandomString() {
   try {
     const userToken = localStorage.getItem("userToken");
@@ -143,6 +189,14 @@ export async function generateRandomString() {
   }
 }
 
+/**
+ * Fetches the current balance of the user based on the user token and userId stored in localStorage.
+ * Makes an API request to retrieve the balance details and returns the data if the request is successful.
+ * Displays error messages using toast notifications if any error occurs during the process.
+ *
+ * @return {Promise<Object|undefined>} A promise that resolves to an object containing the user's balance information if successful,
+ * or undefined if there are errors or issues retrieving the user token or userId.
+ */
 export async function currentBalance() {
   try {
     const userToken = localStorage.getItem("userToken");
@@ -184,6 +238,14 @@ export async function currentBalance() {
   }
 }
 
+/**
+ * Retrieves the transaction history for the current user from the server.
+ * The function fetches the data using the user's token and ID stored in local storage.
+ * Displays error messages if the token or ID is not available, or if an error occurs during the fetch operation.
+ *
+ * @return {Promise<Object>|undefined} Returns a promise that resolves to the transaction history object if successful,
+ * or undefined if an error occurs or necessary user information is missing.
+ */
 export async function getTransactionHistory() {
   try {
     const userToken = localStorage.getItem("userToken");
@@ -226,6 +288,12 @@ export async function getTransactionHistory() {
   }
 }
 
+/**
+ * Deletes an operation from the history based on the provided operation ID.
+ *
+ * @param {number} operationId - The identifier of the operation to be deleted.
+ * @return {Promise<boolean>} A promise that resolves to true if the operation was successfully deleted, or false otherwise.
+ */
 export async function deleteOperationHistory(operationId: number): Promise<boolean> {
   try {
     const userToken = localStorage.getItem("userToken");
